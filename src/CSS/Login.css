@@ -1,0 +1,117 @@
+/* Wrapper for full screen center alignment */
+.login-wrapper {
+    background-color: #000000;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+/* Login Container (optional extra specificity) */
+.login-container {
+    width: 100%;
+
+}
+
+/* Login Row */
+.login-row {
+    justify-content: center;
+}
+
+/* Card style */
+.login-card {
+    position: relative;
+    top: 10%;
+    background-color: #1a1a1a !important;
+    border: none !important;
+    border-radius: 16px;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255) !important;
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: scale(1.01);
+}
+
+/* Login Card Body */
+.login-card-body {
+    padding: 1.5rem;
+}
+
+/* Headings */
+.login-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+/* Alert */
+.login-error-alert {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    font-size: 0.9rem;
+}
+
+/* Labels */
+.login-form-label {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Input fields */
+.login-form-control {
+    background-color: #ffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+    font-size: 0.95rem;
+}
+
+.login-form-control::placeholder {
+    color: #000000;
+}
+
+.login-form-control:focus {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255) !important;
+}
+
+/* Submit button */
+.login-submit-btn {
+    background-color: #000000;
+    border-color: #fff !important;
+    font-weight: 600;
+    padding: 0.6rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+}
+
+.login-submit-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .login-card {
+        padding: 1.25rem;
+    }
+
+    .login-title {
+        font-size: 1.4rem;
+    }
+}

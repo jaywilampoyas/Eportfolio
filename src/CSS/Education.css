@@ -1,0 +1,103 @@
+.education-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: #f1f1f1;
+    background-color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.education-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #fff;
+    
+}
+
+.education-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.education-card {
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: scale(1.02);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.education-degree {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.education-year {
+    font-size: 0.95rem;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.education-school {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #000;
+    font-style: italic;
+}
+
+.education-detail {
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+    color: #000;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .education-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .education-title {
+        font-size: 1.6rem;
+    }
+
+    .education-card {
+        padding: 1rem;
+    }
+
+    .education-degree {
+        font-size: 1rem;
+    }
+
+    .education-school,
+    .education-year {
+        font-size: 0.9rem;
+    }
+         .education-header {
+             flex-direction: column;
+             align-items: flex-start;
+         }
+    
+         .education-year {
+             margin-top: 0.4rem;
+         }
+}

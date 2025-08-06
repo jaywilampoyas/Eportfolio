@@ -1,0 +1,143 @@
+/* === Navbar Container === */
+.custom-navbar {
+    background-color: #2a2a2a;
+    padding: 1.5rem 1rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-bottom:#ffffff solid 2px;
+}
+
+/* === Branding === */
+.brand {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.brand-text {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* === Nav Links === */
+.nav-links .nav-link {
+    color: white !important;
+    font-weight: 500;
+    margin: 0 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links .nav-link:hover {
+    color: #00ffff !important;
+}
+
+/* Animation under nav links */
+.nav-animate::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00ffff;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.nav-animate:hover::after {
+    width: 100%;
+}
+
+/* === Logout Button === */
+.logout-btn {
+    color: white !important;
+    border-color: #ffffff !important;
+    transition: background 0.3s ease;
+    margin-left: 1rem;
+    background-color: black;
+}
+
+.logout-btn:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* === Toggler Custom Burger Icon === */
+.custom-toggler {
+    border: none !important;
+    background: none;
+    outline: none;
+    box-shadow: none !important;
+    position: relative;
+    z-index: 1001;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-toggler .navbar-toggler-icon::before,
+.custom-toggler .navbar-toggler-icon::after {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background-color: white !important;
+    display: block;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-toggler .navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.custom-toggler .navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/* Animate burger to X on open */
+.navbar-open .custom-toggler .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-open .custom-toggler .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar-open .custom-toggler .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* === Responsive Behavior === */
+@media (max-width: 768px) {
+    .nav-links {
+        background-color: #2a2a2a;
+        padding: 1rem;
+    }
+
+    .nav-links .nav-link {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .logout-btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,58 @@
+/* Terms.css */
+
+.terms-container {
+    max-width: 960px;
+    margin: 10rem auto;
+    margin-bottom: 5rem;
+    padding: 3rem 2rem;
+    background-color: #fefefe;
+    color: #222;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.75;
+    transition: all 0.3s ease-in-out;
+}
+
+.terms-container h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #111;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.terms-container p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.terms-container ul {
+    padding-left: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.terms-container li {
+    font-size: 1.1rem;
+    margin-bottom: 0.9rem;
+    list-style: disc;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .terms-container h2 {
+        font-size: 1.75rem;
+    }
+
+    .terms-container p,
+    .terms-container li {
+        font-size: 1.05rem;
+    }
+}
