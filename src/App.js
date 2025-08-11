@@ -18,6 +18,7 @@ import Policy from './Website/Policy';
 // Admin pages
 import Dashboard from './Admin/Dashboard';
 import Login from './Admin/Login';
+import Edit from './Admin/Edit';
 
 import { FaArrowUp } from 'react-icons/fa';
 import './CSS/Home.css'; // Optional: for back-to-top styles
@@ -38,7 +39,7 @@ function AppContent() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const hideFooter = location.pathname === '/login' || location.pathname === '/dashboard';
+  const hideFooter = location.pathname === '/login' || location.pathname === '/dashboard' || location.pathname === '/edit';
 
   // Map each route to its corresponding section title
   const routeTitles = {
@@ -80,6 +81,7 @@ function AppContent() {
         {/* Admin Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/edit" element={<Edit />} />
       </Routes>
 
       {/* Back to Top Button */}

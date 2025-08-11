@@ -147,6 +147,17 @@ function Dashboard() {
         </div>
 
         <Row className="justify-content-center gx-5 gy-5">
+
+              <div className="text-center mb-4">
+        <Button
+          variant="info"
+          className="contents-btn"
+          onClick={() => navigate('/edit')}
+        >
+          📂 Contents
+        </Button>
+      </div>
+
           <Col md={6}>
             <Card className="p-4 dashboard-unique-post-card">
               <h4 className="mb-4">Create New Post</h4>

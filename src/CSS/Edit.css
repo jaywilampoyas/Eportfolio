@@ -1,0 +1,179 @@
+/* General Page Layout */
+.edit-page {
+    background-color: #121212;
+    color: #f5f5f5;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Exit & Archive Buttons */
+.exit-button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.exit-button,
+.archive-btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.exit-button:hover,
+.archive-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Section Titles */
+.edit-section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Card Styling */
+.edit-card {
+    background-color: #fff;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.edit-card-img {
+    object-fit: cover;
+    height: 160px;
+    /* Reduced height for smaller images */
+}
+
+/* Carousel */
+.edit-card-carousel .carousel-item img {
+    border-radius: 8px;
+    height: 160px;
+    /* Match card image height */
+    object-fit: cover;
+}
+
+/* Card Body */
+.edit-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.edit-card-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.edit-card-buttons .btn {
+    flex: 1;
+}
+
+/* Archive Section */
+.edit-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.edit-section li {
+    background: #1c1c1c;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.edit-section li img {
+    border-radius: 4px;
+    height: 60px;
+    /* Smaller image in list */
+    object-fit: cover;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #333;
+}
+
+/* Form Elements */
+.form-control {
+    background-color: #fff;
+    color: black;
+    border: 1px solid #444;
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+/* Image Preview in Edit Modal */
+.mb-3.text-center img {
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    max-height: 160px;
+    /* Smaller preview in modal */
+}
+
+/* Loading Spinner */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .edit-card-img {
+        height: 140px;
+    }
+
+    .edit-card-carousel .carousel-item img {
+        height: 140px;
+    }
+
+    .exit-button-container {
+        justify-content: center;
+    }
+
+    .edit-section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .edit-card-img {
+        height: 120px;
+    }
+
+    .edit-card-carousel .carousel-item img {
+        height: 120px;
+    }
+
+    .edit-card-buttons {
+        flex-direction: column;
+    }
+}
