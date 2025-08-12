@@ -6,24 +6,81 @@
     padding: 20px;
 }
 
-/* Exit & Archive Buttons */
+/* Exit & Archive Buttons Container */
 .exit-button-container {
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+    justify-content: space-between;
+    /* Push archive left, exit right */
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
-.exit-button,
-.archive-btn {
+/* Button Styles */
+.edit-btn {
+    background-color: #0d6efd;
+    color: #fff;
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.2s ease;
 }
 
-.exit-button:hover,
+.edit-btn:hover {
+    background-color: lightblue;
+    transform: scale(1.05);
+}
+
+.archive-btn {
+    background-color: #9B7A01;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
 .archive-btn:hover {
+    background-color: lightyellow;
+    transform: scale(1.05);
+    color: #000;
+}
+
+.exit-button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.exit-button:hover {
+    background-color: #aeaeae;
+    transform: scale(1.05);
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    /* Red */
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #b02a37;
+    transform: scale(1.05);
+}
+
+.save-btn {
+    background-color: #28a745;
+    /* Green */
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    background-color: #1e7e34;
     transform: scale(1.05);
 }
 
@@ -53,14 +110,12 @@
 .edit-card-img {
     object-fit: cover;
     height: 160px;
-    /* Reduced height for smaller images */
 }
 
 /* Carousel */
 .edit-card-carousel .carousel-item img {
     border-radius: 8px;
     height: 160px;
-    /* Match card image height */
     object-fit: cover;
 }
 
@@ -99,7 +154,6 @@
 .edit-section li img {
     border-radius: 4px;
     height: 60px;
-    /* Smaller image in list */
     object-fit: cover;
 }
 
@@ -134,7 +188,6 @@
     border-radius: 8px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
     max-height: 160px;
-    /* Smaller preview in modal */
 }
 
 /* Loading Spinner */
@@ -145,35 +198,30 @@
     min-height: 80vh;
 }
 
+.modal-header .btn-close {
+    filter: invert(1);
+    /* makes it white */
+    opacity: 1;
+    /* fully visible */
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    .exit-button-container {
+        flex-direction: row;
+        justify-content: space-between;
+        /* Keep same layout on mobile */
+    }
+
     .edit-card-img {
         height: 140px;
     }
 
     .edit-card-carousel .carousel-item img {
         height: 140px;
-    }
-
-    .exit-button-container {
-        justify-content: center;
     }
 
     .edit-section-title {
         text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .edit-card-img {
-        height: 120px;
-    }
-
-    .edit-card-carousel .carousel-item img {
-        height: 120px;
-    }
-
-    .edit-card-buttons {
-        flex-direction: column;
     }
 }

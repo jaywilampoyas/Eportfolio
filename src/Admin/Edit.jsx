@@ -196,6 +196,7 @@ function Edit() {
                   <div className="edit-card-buttons">
                     <Button
                       variant="warning"
+                      className="edit-btn"
                       size="sm"
                       onClick={() => handleEdit(type, item)}
                     >
@@ -304,9 +305,6 @@ function Edit() {
           {renderArchiveSection("Achievements", archivedAchievements, "Archived_Achievements")}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowArchiveModal(false)}>
-            Close
-          </Button>
         </Modal.Footer>
       </Modal>
 
@@ -380,10 +378,10 @@ function Edit() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowEditModal(false)}>
+          <Button className="cancel-btn" variant="secondary" onClick={() => setShowEditModal(false)}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleSaveEdit}>
+          <Button className="save-btn" variant="primary" onClick={handleSaveEdit}>
             💾 Save Changes
           </Button>
         </Modal.Footer>
