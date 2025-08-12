@@ -4,7 +4,7 @@
     padding: 1.5rem 1rem;
     transition: all 0.3s ease;
     z-index: 1000;
-    border-bottom:#ffffff solid 2px;
+    border-bottom: #ffffff solid 2px;
 }
 
 /* === Branding === */
@@ -126,24 +126,24 @@
 
 /* Visitor Count Badge */
 .visitor-count {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 8px;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
 }
 
 .visitor-count:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
 
@@ -163,26 +163,27 @@
         width: 100%;
         margin-top: 1rem;
     }
-    
-        .visitor-count {
-            padding: 5px 12px;
-            font-size: 0.85rem;
-            gap: 5px;
-        }
-    
-        .visitor-count i,
-        .visitor-count svg {
-            font-size: 1rem;
-        }
-                 .brand-logo {
-                     width: 26px;
-                     height: 26px;
-                     margin-right: 8px;
-                 }
-        
-                 .brand-text {
-                     font-size: 1rem;
-                 }
+
+    .visitor-count {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+        gap: 5px;
+    }
+
+    .visitor-count i,
+    .visitor-count svg {
+        font-size: 1rem;
+    }
+
+    .brand-logo {
+        width: 26px;
+        height: 26px;
+        margin-right: 8px;
+    }
+
+    .brand-text {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -198,17 +199,13 @@
         font-size: 0.9rem;
     }
 
-          .brand-logo {
-              width: 22px;
-              height: 22px;
-              margin-right: 6px;
-          }
-    
-          .brand-text {
-              font-size: 0.9rem;
-          }
-<<<<<<< HEAD
+    .brand-logo {
+        width: 22px;
+        height: 22px;
+        margin-right: 6px;
+    }
+
+    .brand-text {
+        font-size: 0.9rem;
+    }
 }
-=======
-}
->>>>>>> 6cbbb49d2bea73192814ed1b4b1ceb477086d4e3
