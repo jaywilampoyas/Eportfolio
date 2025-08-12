@@ -17,6 +17,7 @@ function Edit() {
   const [archivedProjects, setArchivedProjects] = useState([]);
   const [archivedExperience, setArchivedExperience] = useState([]);
   const [archivedAchievements, setArchivedAchievements] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const [showArchiveModal, setShowArchiveModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -153,71 +154,81 @@ function Edit() {
     return imgs.filter(Boolean);
   };
 
-  const renderSection = (title, data, type) => (
+const renderSection = (title, data, type) => {
+  const filteredData = data.filter(item =>
+    item.title?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
     <div className="edit-section">
       <h3 className="edit-section-title">{title}</h3>
       <Row>
-        {data.map((item) => {
-          const images = getImagesFromItem(item);
-          return (
-            <Col xs={12} md={6} lg={4} key={item.id} className="mb-3">
-              <Card className="edit-card">
-                {images.length > 0 ? (
-                  images.length === 1 ? (
-                    <Card.Img
-                      variant="top"
-                      src={images[0]}
-                      alt={item.title || "Image"}
-                      className="edit-card-img"
-                      style={{ height: "180px", objectFit: "cover" }} // 🔹 smaller image
-                    />
+        {filteredData.length > 0 ? (
+          filteredData.map((item) => {
+            const images = getImagesFromItem(item);
+            return (
+              <Col xs={12} md={6} lg={4} key={item.id} className="mb-3">
+                <Card className="edit-card">
+                  {images.length > 0 ? (
+                    images.length === 1 ? (
+                      <Card.Img
+                        variant="top"
+                        src={images[0]}
+                        alt={item.title || "Image"}
+                        className="edit-card-img"
+                        style={{ height: "180px", objectFit: "cover" }}
+                      />
+                    ) : (
+                      <Carousel interval={null} className="edit-card-carousel">
+                        {images.map((img, idx) => (
+                          <Carousel.Item key={idx}>
+                            <img
+                              className="d-block w-100 edit-card-img"
+                              src={img}
+                              alt={`${item.title || "Image"}-${idx + 1}`}
+                              style={{ height: "180px", objectFit: "cover" }}
+                            />
+                          </Carousel.Item>
+                        ))}
+                      </Carousel>
+                    )
                   ) : (
-                    <Carousel interval={null} className="edit-card-carousel">
-                      {images.map((img, idx) => (
-                        <Carousel.Item key={idx}>
-                          <img
-                            className="d-block w-100 edit-card-img"
-                            src={img}
-                            alt={`${item.title || "Image"}-${idx + 1}`}
-                            style={{ height: "180px", objectFit: "cover" }} // 🔹 smaller image
-                          />
-                        </Carousel.Item>
-                      ))}
-                    </Carousel>
-                  )
-                ) : (
-                  <div className="text-muted text-center py-5">
-                    No image available
-                  </div>
-                )}
-                <Card.Body>
-                  <Card.Title>{item.title || "Untitled"}</Card.Title>
-                  <Card.Text>{item.description || "No description"}</Card.Text>
-                  <div className="edit-card-buttons">
-                    <Button
-                      variant="warning"
-                      className="edit-btn"
-                      size="sm"
-                      onClick={() => handleEdit(type, item)}
-                    >
-                      ✏️ Edit
-                    </Button>
-                    <Button
-                      className="archive-btn"
-                      size="sm"
-                      onClick={() => handleArchive(type, item.id, item)}
-                    >
-                      🗄 Archive
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-          );
-        })}
+                    <div className="text-muted text-center py-5">
+                      No image available
+                    </div>
+                  )}
+                  <Card.Body>
+                    <Card.Title>{item.title || "Untitled"}</Card.Title>
+                    <Card.Text>{item.description || "No description"}</Card.Text>
+                    <div className="edit-card-buttons">
+                      <Button
+                        variant="warning"
+                        className="edit-btn"
+                        size="sm"
+                        onClick={() => handleEdit(type, item)}
+                      >
+                        ✏️ Edit
+                      </Button>
+                      <Button
+                        className="archive-btn"
+                        size="sm"
+                        onClick={() => handleArchive(type, item.id, item)}
+                      >
+                        🗄 Archive
+                      </Button>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            );
+          })
+        ) : (
+          <p className="text-muted">No results found</p>
+        )}
       </Row>
     </div>
   );
+};
 
   const renderArchiveSection = (title, data, type) => (
     <div className="edit-section">
@@ -274,6 +285,7 @@ function Edit() {
         >
           📦 View Archive
         </Button>
+
         <Button
           variant="outline-light"
           className="exit-button"
@@ -282,6 +294,15 @@ function Edit() {
           ❌ Exit
         </Button>
       </div>
+
+                  <div className="search-bar-container">
+      <Form.Control
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+    </div>
 
       {renderSection("Skills", skills, "Skills")}
       {renderSection("Projects", projects, "Projects")}

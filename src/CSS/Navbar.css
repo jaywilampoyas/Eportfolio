@@ -174,4 +174,37 @@
         .visitor-count svg {
             font-size: 1rem;
         }
+                 .brand-logo {
+                     width: 26px;
+                     height: 26px;
+                     margin-right: 8px;
+                 }
+        
+                 .brand-text {
+                     font-size: 1rem;
+                 }
+}
+
+@media (max-width: 480px) {
+    .visitor-count {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        gap: 4px;
+        border-radius: 6px;
+    }
+
+    .visitor-count i,
+    .visitor-count svg {
+        font-size: 0.9rem;
+    }
+
+          .brand-logo {
+              width: 22px;
+              height: 22px;
+              margin-right: 6px;
+          }
+    
+          .brand-text {
+              font-size: 0.9rem;
+          }
 }
